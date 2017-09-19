@@ -1,3 +1,24 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+
+---
+Arch:
+  conf_dir: /var/lib/postgres/data
+  prepare_cluster:
+    user: postgres
+    command: initdb -D /var/lib/postgresql/data
+    test: test -f /var/lib/postgres/data/PG_VERSION
+    env: {}
+  pkg_client: postgresql
+  pkg_dev: postgresql
+Debian:
+  pkg_repo_file: /etc/apt/sources.list.d/pgdg.list
+  pkg_dev: postgresql-server-dev-all
+  pkg_libpq_dev: libpq-dev
+FreeBSD:
+  user: pgsql
+OpenBSD:
+  user: _postgresql
 RedHat:
   pkg: postgresql-server
   pkg_client: postgresql
@@ -15,23 +36,6 @@ RedHat:
     command: initdb -D /var/lib/pgsql/data
 {% endif %}
 {% endif %}
-Arch:
-  conf_dir: /var/lib/postgres/data
-  prepare_cluster:
-    user: postgres
-    command: initdb -D /var/lib/postgresql/data
-    test: test -f /var/lib/postgres/data/PG_VERSION
-    env: {}
-  pkg_client: postgresql
-  pkg_dev: postgresql
-Debian:
-  pkg_repo_file: /etc/apt/sources.list.d/pgdg.list
-  pkg_dev: postgresql-server-dev-all
-  pkg_libpq_dev: libpq-dev
 Suse:
   pkg: postgresql-server
   pkg_client: postgresql
-FreeBSD:
-  user: pgsql
-OpenBSD:
-  user: _postgresql

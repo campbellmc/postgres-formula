@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# vim: ft=sls
+
 # -*- mode: yaml  -*-
 # vim: syntax=yaml:sw=2
 

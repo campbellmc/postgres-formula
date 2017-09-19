@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# vim: ft=sls
+
 {% from "postgres/map.jinja" import postgres with context %}
 
 {% if postgres.pkg_dev %}

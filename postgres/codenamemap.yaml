@@ -1,3 +1,6 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+
 {%- macro ubuntu_block(name, version) %}
 {{ name }}:
   pkg_repo: deb http://apt.postgresql.org/pub/repos/apt/ {{ name }}-pgdg main
